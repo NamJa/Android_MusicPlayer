@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayMusicActivity">
+
+    <!--앨범 아트-->
+    <ImageView
+        android:id="@+id/albumArt"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <!--음악 제목 -->
+    <TextView
+        android:id="@+id/musicTitlePlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/albumArt"
+        android:layout_marginTop="30dp"
+        android:textSize="27sp"
+        android:text="fake.mp3"
+        android:textAlignment="center"/>
+
+
+    <!--
+        조작 버튼
+                 -->
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/musicTitlePlayer"
+        android:orientation="horizontal"
+        android:layout_marginTop="45dp"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/prevImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/previous"
+            android:layout_marginRight="30dp"/>
+        <ImageView
+            android:id="@+id/playImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play"/>
+        <ImageView
+            android:id="@+id/pauseImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pause"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/nextImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/next"/>
+    </LinearLayout>
+
+
+    <!-- 재생 바 -->
+    <SeekBar
+        android:id="@+id/musicSeekBar"
+        android:layout_width="match_parent"
+        android:layout_below="@id/linear"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"/>
+
+
+    <!-- 음악 재생 시간 및 총 러닝 타임 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/musicSeekBar"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/currentPlayTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="0:00"/>
+        <TextView
+            android:id="@+id/slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text=" / "/>
+        <TextView
+            android:id="@+id/musicRunningTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="4:00"/>
+    </LinearLayout>
+
+</RelativeLayout>
